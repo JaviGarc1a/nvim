@@ -24,7 +24,7 @@ packer.init({
 return require('packer').startup(function(use)
 	-- Essentials
 	use('wbthomason/packer.nvim')
-
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 	-- MARKDOWN
 
 	use({
