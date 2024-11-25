@@ -24,9 +24,16 @@ packer.init({
 return require('packer').startup(function(use)
 	-- Essentials
 	use('wbthomason/packer.nvim')
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	-- MARKDOWN
+	use({ "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' })
 
+	-- Extensions
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
+
+	-- MARKDOWN
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
