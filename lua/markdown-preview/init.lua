@@ -97,7 +97,7 @@ vim.api.nvim_exec(
 
     " set default theme (dark or light)
     " By default the theme is define according to the preferences of the system
-    let g:mkdp_theme = 'dark'
+    let g:mkdp_theme = 'light'
     ]],
 	false
 )
