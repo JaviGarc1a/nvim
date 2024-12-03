@@ -25,14 +25,18 @@ return require('packer').startup(function(use)
 	-- Essentials
 	use('wbthomason/packer.nvim')
 	use({ "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' })
-    use {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
-    }
+
+    -- Mason
+    use { "williamboman/mason.nvim", run = ":MasonUpdate" }
+    use "williamboman/mason-lspconfig.nvim"
+    use "neovim/nvim-lspconfig"
+
+    -- Start Screen
     use ({'goolord/alpha-nvim', requires = { 'echasnovski/mini.icons' }})
+
+    -- Theme
     use { "catppuccin/nvim", as = "catppuccin" }
-	-- Extensions
+	-- Fuzzy Finder 
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
 		requires = { {'nvim-lua/plenary.nvim'} }
