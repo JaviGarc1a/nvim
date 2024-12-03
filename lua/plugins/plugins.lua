@@ -25,7 +25,11 @@ return require('packer').startup(function(use)
 	-- Essentials
 	use('wbthomason/packer.nvim')
 	use({ "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' })
-
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
     use ({'goolord/alpha-nvim', requires = { 'echasnovski/mini.icons' }})
     use { "catppuccin/nvim", as = "catppuccin" }
 	-- Extensions
