@@ -77,18 +77,6 @@ cmp.setup({
 	},
 })
 
-require('cmp').setup({
-	enabled = function()
-		return vim.api.nvim_buf_get_option(0, 'buftype') ~= 'prompt' or require('cmp_dap').is_dap_buffer()
-	end,
-})
-
-require('cmp').setup.filetype({ 'dap-repl', 'dapui_watches', 'dapui_hover' }, {
-	sources = {
-		{ name = 'dap' },
-	},
-})
-
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
 	local hl = 'DiagnosticSign' .. type
