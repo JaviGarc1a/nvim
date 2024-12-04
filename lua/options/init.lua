@@ -5,4 +5,4 @@ vim.cmd('set softtabstop=4')
 vim.cmd('set shiftwidth=4')
 vim.cmd('set number relativenumber')
 vim.g.mapleader = ' '
-
+vim.api.nvim_set_keymap('n', '<leader>q', ':cclose<CR>:lclose<CR>', { noremap = true, silent = true })
