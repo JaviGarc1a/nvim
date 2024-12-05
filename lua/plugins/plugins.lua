@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 	use('wbthomason/packer.nvim')
 	use({ "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' })
 
+    use('stevearc/oil.nvim')
     use('folke/which-key.nvim')
     use('windwp/nvim-autopairs')
     -- CMP
