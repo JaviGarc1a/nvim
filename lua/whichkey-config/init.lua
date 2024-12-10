@@ -8,7 +8,7 @@ local mappings = {
     },
     {
         '<leader>q',
-        ':cclose<CR>:lclose<CR>',
+        '<cmd>cclose<CR><cmd>lclose<CR>',
         desc = 'Close quickfix window'
     }
 }

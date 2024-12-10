@@ -1,6 +1,7 @@
 require('markdown-preview')
 require('plugins.plugins')
 require('options')
+require('options.keymaps')
 require('treesitter-config')
 require('telescope-config')
 require('theme-config')
