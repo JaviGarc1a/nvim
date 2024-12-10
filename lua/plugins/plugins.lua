@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
 	-- Essentials
 	use('wbthomason/packer.nvim')
 	use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+	use({'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true }})
 
     use('nvim-tree/nvim-web-devicons')
     use('stevearc/oil.nvim')
