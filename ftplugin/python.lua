@@ -18,16 +18,16 @@ end
 
 function activate_env()
 	vim.ui.input({ prompt = 'Env path: ' }, function(input)
-		vim.cmd('TermExec cmd="source '.. input ..'/bin/activate.fish"')
+		vim.cmd('TermExec dir="%:p:h" cmd="source '.. input ..'/bin/activate.fish"')
 	end)
 end
 
 function run(custom)
 	if not custom then
-		vim.cmd('TermExec cmd="python main.py"')
+		vim.cmd('TermExec dir="%:p:h" cmd="python main.py"')
 	else
 		vim.ui.input({ prompt = 'File: ' }, function(input)
-			vim.cmd('TermExec cmd="python '.. input .. '"')
+			vim.cmd('TermExec dir="%:p:h" cmd="python '.. input .. '"')
 		end)
 	end
 end
