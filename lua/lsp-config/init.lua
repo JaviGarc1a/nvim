@@ -1,3 +1,5 @@
-require('lsp-config.lua-config')
-require('lsp-config.pyright-config')
-require('lsp-config.bash-config')
+require("lsp-config.lua-config")
+require("lsp-config.pyright-config")
+require("lsp-config.bash-config")
+require("lsp-config.cpp-config")
+require("lsp-config.null-ls")
