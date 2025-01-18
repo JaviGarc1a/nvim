@@ -12,12 +12,16 @@ local mappings = {
 	},
 	{
 		"<leader>ff",
-		builtin.find_files,
+		function()
+			builtin.find_files({ cwd = vim.fn.expand("%:p:h") })
+		end,
 		desc = "Telescope find files",
 	},
 	{
 		"<leader>fg",
-		builtin.live_grep,
+		function()
+			builtin.live_grep({ cwd = vim.fn.expand("%:p:h") })
+		end,
 		desc = "Telescope live grep",
 	},
 	{
