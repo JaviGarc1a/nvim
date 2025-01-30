@@ -13,14 +13,18 @@ local mappings = {
 	{
 		"<leader>ff",
 		function()
-			builtin.find_files({ cwd = vim.fn.expand("%:p:h") })
+			local oil_active = vim.bo.filetype == "oil"
+			local cwd = oil_active and require("oil").get_current_dir() or vim.fn.expand("%:p:h")
+			builtin.find_files({ cwd = cwd })
 		end,
 		desc = "Telescope find files",
 	},
 	{
 		"<leader>fg",
 		function()
-			builtin.live_grep({ cwd = vim.fn.expand("%:p:h") })
+			local oil_active = vim.bo.filetype == "oil"
+			local cwd = oil_active and require("oil").get_current_dir() or vim.fn.expand("%:p:h")
+			builtin.live_grep({ cwd = cwd })
 		end,
 		desc = "Telescope live grep",
 	},

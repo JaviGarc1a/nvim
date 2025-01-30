@@ -1,5 +1,6 @@
 local wk = require("which-key")
 
+
 local mappings = {
 	{
 		"<leader>Q",
