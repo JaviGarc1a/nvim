@@ -1,18 +1,15 @@
 local M = {}
 
 M.setup = function()
-	local signs = {
-		{ name = "DiagnosticSignError", text = " " },
-		{ name = "DiagnosticSignWarn", text = " " },
-		{ name = "DiagnosticSignHint", text = " " },
-		{ name = "DiagnosticSignInfo", text = " " },
-	}
-
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
-
-	local config = {
+	vim.diagnostic.config({
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = " ",
+				[vim.diagnostic.severity.WARN] = " ",
+				[vim.diagnostic.severity.HINT] = " ",
+				[vim.diagnostic.severity.INFO] = " ",
+			},
+		},
 		-- disable virtual text
 		virtual_text = false,
 		-- show signs
@@ -30,9 +27,7 @@ M.setup = function()
 			header = "",
 			prefix = "",
 		},
-	}
-
-	vim.diagnostic.config(config)
+	})
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
@@ -44,7 +39,6 @@ M.setup = function()
 end
 
 local function lsp_highlight_document(client)
-	-- Set autocommands conditional on server_capabilities
 	if client.server_capabilities.documentHighlight then
 		vim.api.nvim_exec(
 			[[
@@ -72,11 +66,22 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>uh", "", {
+		noremap = true,
+		silent = true,
+		callback = function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end,
+		desc = "Toggle Inlay Hints",
+	})
 end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
+	if vim.lsp.inlay_hint and client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(true)
+	end
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

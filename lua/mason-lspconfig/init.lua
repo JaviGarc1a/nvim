@@ -1,5 +1,5 @@
 require("mason").setup({
-	ensure_installed = { "lua_ls", "pyright" },
+	ensure_installed = { "lua_ls", "basedpyright" },
 	ui = {
 		icons = {
 			package_installed = "✓",

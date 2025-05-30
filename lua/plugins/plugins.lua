@@ -31,7 +31,7 @@ return require("packer").startup(function(use)
 	use("stevearc/oil.nvim")
 	use("folke/which-key.nvim")
 	use("windwp/nvim-autopairs")
-	use("jose-elias-alvarez/null-ls.nvim")
+	use("nvimtools/none-ls.nvim")
 	-- CMP
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
