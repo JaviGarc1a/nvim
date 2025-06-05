@@ -6,4 +6,4 @@ vim.bo.softtabstop = 4
 vim.bo.shiftwidth = 4
 vim.g.mapleader = " "
 vim.o.shell = "fish"
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard ="unnamedplus"
