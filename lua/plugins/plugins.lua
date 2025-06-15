@@ -51,7 +51,10 @@ return require("packer").startup(function(use)
 	use({ "williamboman/mason.nvim", run = ":MasonUpdate" })
 	use("williamboman/mason-lspconfig.nvim")
 	use("neovim/nvim-lspconfig")
-
+	use {
+	  "pmizio/typescript-tools.nvim",
+	  requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	}
 	-- Start Screen
 	use({ "goolord/alpha-nvim", requires = { "echasnovski/mini.icons" } })
 

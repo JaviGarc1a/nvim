@@ -15,6 +15,9 @@ null_ls.setup({
 		null_ls.builtins.formatting.shfmt.with({
 			extra_args = { "-i", "4" },
 		}),
+
+		-- Typescript
+		null_ls.builtins.formatting.prettier,
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
