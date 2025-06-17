@@ -1,6 +1,5 @@
 local wk = require("which-key")
 
-
 local mappings = {
 	{
 		"<leader>Q",
@@ -13,14 +12,29 @@ local mappings = {
 		desc = "Close quickfix window",
 	},
 	{
-		"<space>t",
+		"<leader>t",
 		group = "Terminal",
 	},
 	{
-		"<space>td",
-		":ToggleTerm dir=%:p:h<CR>",
+		"<leader>td",
+		"<cmd>ToggleTerm dir=%:p:h<CR>",
 		desc = "Open Terminal here",
 	},
+	{
+		"<leader>?",
+		wk.show,
+		desc = "Buffer local keymaps",
+	},
+	{
+		"<leader>m",
+		"<cmd>Mason<cr>",
+		desc = "Mason"
+	},
+	{
+		"<leader>p",
+		"<cmd>PackerSync<cr>",
+		desc = "Packer Sync"
+	}
 }
 
 wk.add(mappings, { mode = "n", silent = true })
