@@ -65,6 +65,7 @@ return require("packer").startup(function(use)
 		"pmizio/typescript-tools.nvim",
 		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	})
+	use({ "mrcjkb/rustaceanvim", version = "^6" })
 	-- Start Screen
 	use({ "goolord/alpha-nvim", requires = { "echasnovski/mini.icons" } })
 

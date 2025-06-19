@@ -7,9 +7,8 @@ require("bufferline").setup({
 		offsets = {
 			{
 				filetype = "neo-tree",
-				text = "Neo-tree",
+				text = "Neo-Tree",
 				highlight = "Directory",
-				text_align = "left",
 			},
 		},
 		show_buffer_close_icons = false,
@@ -28,6 +27,7 @@ local mappings = {
 	{ "<leader>br", "<cmd>BufferLineCloseRight<cr>", desc = "Delete buffers to the right" },
 	{ "<leader>bp", "<cmd>bprevious<cr>", desc = "Prev buffer" },
 	{ "<leader>bn", "<cmd>bnext<cr>", desc = "Next buffer" },
+	{ "<leader>bd", "<cmd>bnext<cr><cmd>bdelete#<cr>", desc = "Close buffer" },
 }
 
 which_key.add(mappings)

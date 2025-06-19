@@ -19,7 +19,7 @@ require("gitsigns").setup({
 	signcolumn = true, -- Show signs in the sign column
 	numhl = false, -- Disable line number highlighting
 	linehl = false, -- Disable full line highlighting
-	word_diff = true, -- Highlight word-level differences
+	word_diff = false, -- Highlight word-level differences
 	watch_gitdir = { follow_files = true },
 	auto_attach = true,
 	attach_to_untracked = false,
