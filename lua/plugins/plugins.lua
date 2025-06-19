@@ -42,6 +42,7 @@ return require("packer").startup(function(use)
 	use("folke/which-key.nvim")
 	use("windwp/nvim-autopairs")
 	use("nvimtools/none-ls.nvim")
+	use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
 	-- CMP
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-nvim-lsp")
