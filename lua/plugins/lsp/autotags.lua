@@ -9,5 +9,7 @@ return {
 		"astro",
 	},
 	events = { "ButReadPre", "ButNewFile" },
-	config = true,
+	config = function()
+		require("nvim-ts-autotag").setup()
+	end,
 }
