@@ -1,16 +1,3 @@
-require("venv-selector").setup({
-	auto_refresh = false,
-	search_venv_managers = true,
-	search_workspace = true,
-	search = true,
-	dap_enabled = true,
-	parents = 2,
-	name = { "venv", ".venv", "env", ".env" },
-	fd_binary_name = "fd",
-	notify_user_on_activate = true,
-	stay_on_this_version = true,
-})
-
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
 	return
@@ -18,7 +5,7 @@ end
 
 function activate_env()
 	vim.ui.input({ prompt = "Env path: " }, function(input)
-		vim.cmd('TermExec dir="%:p:h" cmd="source ' .. input .. '/bin/activate.fish"')
+		vim.cmd('TermExec dir="%:p:h" cmd="source ' .. input .. '/bin/activate"')
 	end)
 end
 
