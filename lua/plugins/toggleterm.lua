@@ -5,16 +5,12 @@ return {
 	keys = {
 		{
 			"<leader>tf",
-			function()
-				require("toggleterm").toggle(1, nil, nil, "float")
-			end,
+			"<cmd>ToggleTerm dir=%:p:h direction=float<cr>",
 			desc = "Toggle float terminal",
 		},
 		{
 			"<leader>th",
-			function()
-				require("toggleterm").toggle(2, 15, nil, "horizontal")
-			end,
+			"<cmd>ToggleTerm dir=%:p:h direction=horizontal size=15<cr>",
 			desc = "Toggle horizontal terminal",
 		},
 		{ "<C-t>", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
