@@ -14,7 +14,7 @@ return {
 	},
 	opts = {
 		formatters_by_ft = {
-			python = { "ruff", "isort" },
+			python = { "ruff_fix", "ruff_format", "isort" },
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
