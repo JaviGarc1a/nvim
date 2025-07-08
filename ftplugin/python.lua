@@ -3,13 +3,13 @@ if not status_ok then
 	return
 end
 
-function activate_env()
+local function activate_env()
 	vim.ui.input({ prompt = "Env path: " }, function(input)
 		vim.cmd('TermExec dir="%:p:h" cmd="source ' .. input .. '/bin/activate"')
 	end)
 end
 
-function run(custom)
+local function run(custom)
 	if not custom then
 		vim.cmd('TermExec dir="%:p:h" cmd="python main.py"')
 	else

@@ -29,6 +29,8 @@ return {
 				"html",
 				"tailwindcss",
 				"eslint",
+				"docker_compose_language_service",
+				"dockerls",
 			},
 			automatic_installation = true,
 		},

@@ -22,6 +22,7 @@ return {
 			"json",
 			"rust",
 			"tsx",
+			"dockerfile",
 		},
 		highlight = {
 			enable = true,
