@@ -8,7 +8,7 @@ return {
 		"typescriptreact",
 		"astro",
 	},
-	events = { "ButReadPre", "ButNewFile" },
+	events = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("nvim-ts-autotag").setup()
 	end,
