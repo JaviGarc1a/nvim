@@ -5,7 +5,7 @@ return {
 	ft = { "rust" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"mfussenegger/nvim-dap",
+		{ "mfussenegger/nvim-dap", ft = { "rust" } },
 	},
 	config = function()
 		vim.g.rustaceanvim = {
