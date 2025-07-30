@@ -38,4 +38,19 @@ return {
 			lsp_fallback = true,
 		},
 	},
+	config = function(_, opts)
+		require("conform").setup(opts)
+
+		require("utils.format").register({
+			name = "Conform",
+			priority = 100,
+			primary = true,
+			sources = function(buf)
+				return { "conform" }
+			end,
+			format = function(buf)
+				require("conform").format({ bufnr = buf, async = false })
+			end,
+		})
+	end,
 }

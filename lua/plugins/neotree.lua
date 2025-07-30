@@ -11,7 +11,8 @@ return {
 		{
 			"<leader>ee",
 			function()
-				require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+				local root = require("utils.root").get()
+				require("neo-tree.command").execute({ toggle = true, dir = root })
 			end,
 			desc = "Toggle NeoTree",
 		},

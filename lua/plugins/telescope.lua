@@ -7,16 +7,16 @@ return {
 		{
 			"<leader>ff",
 			function()
-				local cwd = vim.fn.expand("%:p:h")
-				require("telescope.builtin").find_files({ cwd = cwd })
+				local root = require("utils.root").get()
+				require("telescope.builtin").find_files({ cwd = root })
 			end,
 			desc = "Telescope find files",
 		},
 		{
 			"<leader>fg",
 			function()
-				local cwd = vim.fn.expand("%:p:h")
-				require("telescope.builtin").live_grep({ cwd = cwd })
+				local root = require("utils.root").get()
+				require("telescope.builtin").live_grep({ cwd = root })
 			end,
 			desc = "Telescope live grep",
 		},
