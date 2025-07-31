@@ -41,7 +41,7 @@ return {
 
 		vim.keymap.set("n", "<leader>tc", "<cmd>CloseAllTerminals<cr>", { desc = "Toggle terminal (horizontal)" })
 
-		vim.keymap.set("n", "<C-t>", "<cmd>ToggleTerm<cr>", { desc = "Toggle default terminal" })
+		vim.keymap.set("n", "<C-'>", "<cmd>ToggleTerm<cr>", { desc = "Toggle default terminal" })
 
 		vim.api.nvim_create_user_command("CloseAllTerminals", function()
 			for _, term in pairs(require("toggleterm.terminal").get_all()) do
@@ -60,7 +60,7 @@ return {
 
 		require("toggleterm").setup({
 			size = 20,
-			open_mapping = [[<C-t>]],
+			open_mapping = [[<C-'>]],
 			hide_numbers = true,
 			shade_terminals = true,
 			shading_factor = 2,
