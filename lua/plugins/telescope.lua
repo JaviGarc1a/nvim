@@ -8,7 +8,7 @@ return {
 			"<leader>ff",
 			function()
 				local root = require("utils.root").get()
-				require("telescope.builtin").find_files({ cwd = root })
+				require("telescope.builtin").find_files({ cwd = root, hidden = true })
 			end,
 			desc = "Telescope find files",
 		},
@@ -16,7 +16,7 @@ return {
 			"<leader>fg",
 			function()
 				local root = require("utils.root").get()
-				require("telescope.builtin").live_grep({ cwd = root })
+				require("telescope.builtin").live_grep({ cwd = root, additional_args = { "--hidden" } })
 			end,
 			desc = "Telescope live grep",
 		},
