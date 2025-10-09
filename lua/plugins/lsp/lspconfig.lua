@@ -7,7 +7,7 @@ return {
 		"stevearc/conform.nvim",
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
+		local lspconfig = vim.lsp.config
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
 		local opts = { noremap = true, silent = true }
@@ -70,7 +70,7 @@ return {
 			},
 		})
 
-		lspconfig.basedpyright.setup({
+		lspconfig("basedpyright", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
@@ -89,7 +89,7 @@ return {
 			},
 		})
 
-		lspconfig.lua_ls.setup({
+		lspconfig("lua_ls", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
@@ -127,7 +127,7 @@ return {
 			},
 		})
 
-		lspconfig.ts_ls.setup({
+		lspconfig("ts_ls", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			init_options = {
@@ -174,22 +174,22 @@ return {
 			},
 		})
 
-		lspconfig.eslint.setup({
+		lspconfig("eslint", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
-		lspconfig.tailwindcss.setup({
+		lspconfig("tailwindcss", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
-		lspconfig.dockerls.setup({
+		lspconfig("dockerls", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
 
-		lspconfig.docker_compose_language_service.setup({
+		lspconfig("docker_compose_language_service", {
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
