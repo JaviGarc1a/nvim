@@ -10,7 +10,7 @@ return {
 		auto_refresh = false,
 		search_venv_managers = true,
 		search_workspace = true,
-		search = true,
+		search = {},
 		dap_enabled = true,
 		parents = 2,
 		name = { "venv", ".venv", "env", ".env" },

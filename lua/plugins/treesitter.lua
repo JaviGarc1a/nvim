@@ -24,6 +24,7 @@ return {
 				"json",
 				"rust",
 				"tsx",
+				"yaml"
 			},
 			highlight = {
 				enable = true,

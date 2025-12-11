@@ -12,12 +12,12 @@ return {
 				desc = "Buffer Local Keymaps (which-key)",
 			},
 			{
-				"<leader>Q",
+				"<leader>qq",
 				"<cmd>qa!<CR>",
 				desc = "Force Quit",
 			},
 			{
-				"<leader>q",
+				"<leader>Q",
 				"<cmd>cclose<CR><cmd>lclose<CR>",
 				desc = "Close quickfix window",
 			},

@@ -9,6 +9,7 @@ return {
 			typescript = { "eslint" },
 			javascript = { "eslint" },
 			dockerfile = { "hadolint" },
+			["yaml.ansible"] = { "ansible-lint" }
 		}
 	end,
 }
